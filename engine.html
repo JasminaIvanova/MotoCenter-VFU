@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Jessy Moto Center</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script src="script.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="images/Jessy.ico">
+
+        <style>
+            table, th, td {
+              border: 1px solid white;
+              border-collapse:collapse;
+              color: white;
+              justify-content: center;
+              text-align: center;
+              margin-left: auto;
+              margin-right: auto;
+              margin-top: 15%;
+              
+            }
+            th, td {
+              padding: 5px;
+            }
+          </style>
+    </head>
+    <body>
+       <div class="banner">
+            
+            <div class="navigation">
+                
+                <img src="images/Jessy.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="motors.html">Motors</a></li>
+                    <li><a href="engine.html">Engine Parts</a></li>
+                    <li id="login-menu"><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Sign Up</a></li>
+                   
+                </ul>
+            
+            </div>
+            <div class="header">
+              <h1>Available parts for sale</h1>
+              <p>Please contact us if you want to purchase an engine part for specific model motorcycle</p>
+          </div>
+            <table id="engine_parts"></table>
+      
+  <script>
+    if(window.XMLHttpRequest)
+    {
+      xmlhttp = new XMLHttpRequest();
+    }
+    else
+    {
+      xmlhttp = newActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.open("GET", "data.xml", false)
+    xmlhttp.send();
+    var xmlDoc = xmlhttp.responseXML;
+    var table="<tr><th>Category</th><th>Part</th><th>Price</th></tr>";
+    var x = xmlDoc.getElementsByTagName("PARTS");
+      for (i = 0; i <x.length; i++) {
+        table += "<tr><td>" +
+        x[i].getElementsByTagName("CATEGORY")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+        "</td></tr>";
+      }
+      document.getElementById("engine_parts").innerHTML = table;
+    
+    </script>
+</body>
+</html>

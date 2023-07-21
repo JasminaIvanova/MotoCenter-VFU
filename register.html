@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Jessy Moto Center</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="script.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="images/Jessy.ico">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    </head>
+    <body>
+       <div class="banner">
+            
+            <div class="navigation">
+                
+                <img src="images/Jessy.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="motors.html">Motors</a></li>
+                    <li><a href="engine.html">Engine Parts</a></li>
+                    <li id="login-menu"><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Sign Up</a></li>
+                   
+                </ul>
+                
+            </div>
+             <section class="home">
+        <div class="form_container">
+            <a class="btn" id="close" aria-expanded="false" aria-haspopup="true"  href="index.html">
+                <i class="fa-solid fa-xmark" ></i>
+                </a>
+            <div class="form signup_form">
+            <form action="#">
+                <h2>Sign up</h2>
+                <div class="input_box">
+                <input type="email" placeholder="Enter your email" required />
+                <i class="uil uil-envelope-alt email"></i>
+                </div>
+                <div class="input_box">
+                <input type="password" placeholder="Create password" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash hide"></i>
+                </div>
+                <div class="input_box">
+                <input type="password" placeholder="Confirm password" required />
+                <i class="uil uil-lock password"></i>
+                <i class="uil uil-eye-slash hide"></i>
+                </div>
+                <button class="button">Sign up</button>
+                <div class="login_signup">Already have an account? <a href="login.html" id="login">Login</a></div>
+            </form>
+            </div>
+        </div>
+        </section>
+
+        </div>
+     
+    </body>
+</html>
+
+<script>
+    hideShow = document.querySelectorAll(".hide");
+    hideShow.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    let pass = icon.parentElement.querySelector("input");
+    if (pass.type === "password") {
+        pass.type = "text";
+      icon.classList.replace("uil-eye-slash", "uil-eye");
+    } else {
+        pass.type = "password";
+      icon.classList.replace("uil-eye", "uil-eye-slash");
+    }
+  });
+});
+</script>

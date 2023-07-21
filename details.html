@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>Jessy Moto Center</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="script.js" defer></script>
+        <link rel="icon" type="image/x-icon" href="images/Jessy.ico">
+    </head>
+    <body>
+       <div class="banner">
+            
+            <div class="navigation">
+                
+                <img src="images/Jessy.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="motors.html">Motors</a></li>
+                    <li><a href="engine.html">Engine Parts</a></li>
+                    <li id="login-menu"><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Sign Up</a></li>
+                </ul>
+            </div> 
+       
+            
+            <div id="popup">
+                <a class="btn btn-secondary" type="button" id="close"  aria-expanded="false" aria-haspopup="true"  href="ktm.html">
+                <i class="fa-solid fa-xmark" style="color:grey"></i>
+                </a>
+                <img src="images/ktm-det.png" id="details-img"/>
+                <div class="col-xs-5 flex" >
+                    <h2 class="customH1" style="font-family:'Raleway'; font-size: 2em; font-weight: bold">KTM 500 EXC-F</h2>
+                    <div class="content">
+                        <h6  style="font-size:1.1em">Brand: KTM</h6>
+                        <h6  style="font-size:1.1em">Model: 500 EXC-F</h6>
+                        <h6  style="font-size:1.1em">Engine Size: 293.2cc</h6>
+                        <h6  style="font-size:1.1em">Fuel Capacity: 7.2l</h6>
+                        <h6  style="font-size:1.1em">Seat Height: 958mm</h6>
+                        <h6  style="font-size:1.1em; color:#6fa638"><i class="fas fa-check"></i> Available: 5 </h6>
+                        <h6  style="font-size:1.1em">Catalog Number: 6271937</h6>
+                        <h6  style="font-size:1.1em; font-weight: bold;">Express Delivery: <div id="current_date"></p></h6>
+                        <h6  style="font-size:1.1em; font-weight: bold;">Standard Delivery: <div id="current_date_notExpress"></p></h6>
+                        <h6  style="font-size:1.0em; width: 400px; padding-right: 80px; text-align: justify;">High power at the lowest weight possible,
+                            minimum maintenance requirements, and smooth, linear power delivery.
+                             When it comes to power to weight ratios, the KTM 500 EXC-F sets the standard with an engine producing more 
+                             than 57 HP while weighing only 23,9 kg.</h6>
+                    </div>
+                </div>
+                <div class = "col-xs-1" style="justify-content:right; margin-top:10px; margin-left:50px">
+                    <div class ="card mb-4 border-0" id="add-to-cart">
+                        <h6 class="my-0 font-weight-normal">
+                             <label style="font-size: 30px; color:black">£11,949</label>
+                        </h6>
+                         <div>
+                                <a style="margin-top: 1vw;  font-size:14px; background-color:black; color:white" class=" w-100 btn btn-lg ">Add to Cart </a>
+                        </div>
+                    </div>
+                </div>
+                
+             </div> 
+           
+     
+    </body>
+</html>
+
+<script>
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    if(day == 30 && month % 2 == 1 )
+    {
+        month++;
+        day = 2;
+    }
+    if(day == 30 && month % 2 == 0 )
+    {
+        month++;
+        day = 1;
+    }
+    if(day == 31 && month % 2 == 0 )
+    {
+        month++;
+        day = 2;
+    }
+    if(day == 28 && month == 2 )
+    {
+        month++;
+        day = 2;
+    }
+    else {
+        month = month;
+        year = year;
+        day = day + 2;
+    }
+    document.getElementById("current_date").innerHTML = month + "/" + day + "/" + year;
+</script>
+<script>
+    date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    if(day == 30 && month % 2 == 1 )
+    {
+        month++;
+        day = 5;
+    }
+    if(day == 30 && month % 2 == 0 )
+    {
+        month++;
+        day = 4;
+    }
+    if(day == 31 && month % 2 == 0 )
+    {
+        month++;
+        day = 5;
+    }
+    if(day + 5 > 28 && month == 2 )
+    {
+        month++;
+        day = (28 - day) + 1 ;
+    }
+    //TODO:month 12 and year next
+    else {
+        month = month;
+        year = year;
+        day = day + 5;
+    }
+    document.getElementById("current_date_notExpress").innerHTML = "due " + month + "/" + day + "/" + year;
+</script>
